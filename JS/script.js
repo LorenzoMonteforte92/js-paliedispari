@@ -11,13 +11,51 @@ let userChoiche
 while(userChoiche != "pari" && userChoiche != "dispari"){
     userChoiche = prompt(`Scegli pari o dispari`);
 }
-console.log(userChoiche);
+console.log( `scelta utente: ` + userChoiche);
 //chiedere di scegliere un numero da uno a 5
 let userNumber = parseInt(prompt(`Scegli un numero da 1 a 5`));
 //valido i prompt
-while(userNumber < 1 || userNumber >= 5 ){
+while(userNumber < 1 || userNumber > 5){
     userNumber = parseInt(prompt(`Scegli un numero da 1 a 5`));
 }
+console.log(`numero utente: ` + userNumber);
 
-console.log(userNumber);
+//numero random del pc
+let cpuNumber = getRndInteger(1, 5);
+console.log(`numero cpu: ` + cpuNumber);
 
+//sommo numero utente e numero cpu
+sum = cpuNumber + userNumber
+console.log(`somma numeri: ` + sum);
+
+//stampo se la somma è pari o dispari
+let isSumOddEven = isEvenOrOdd (sum);
+console.log(`la somma è: ` + isSumOddEven);
+
+let gameResult 
+if(isSumOddEven === userChoiche){
+    gameResult = `Congratulazioni hai vinto`
+} else {
+    gameResult = `mi spiace hai perso`
+}
+console.log(gameResult);
+
+
+// ----------------
+//     FUNCTIONS
+// ----------------
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+
+function isEvenOrOdd (number){
+    let oddEven 
+    if(number % 2 === 0) {
+        oddEven = `pari`
+    } else{
+        oddEven = `dispari`
+    };
+
+    return oddEven;
+}
