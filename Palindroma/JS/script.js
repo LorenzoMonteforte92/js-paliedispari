@@ -4,13 +4,24 @@
 
 //chiedo la parola all'utente
 let userWord = prompt(`inserisci una parola`)
-//leggere la parola nel da sinistra verso destra
+
+console.log(`parola inserita: ${userWord}`)
+
 //leggerla da destra verso sinistra
+let wordInReverse = reverseWord (userWord);
+
+console.log(`parola al contrario: ${wordInReverse}`)
+
 // confronto se la parola scritta al contrario è uguale a quella inserita dall'utente
+let userMessage
+if(wordInReverse === userWord) {
+    userMessage = `La parola è palindroma`
+} else {
+    userMessage = `La parola non è palindroma`
+}
 
-let palidrome = reverseWord (userWord);
+console.log(userMessage)
 
-console.log(palidrome)
 
 
 
