@@ -12,7 +12,8 @@ while(userChoiche != "pari" && userChoiche != "dispari"){
     userChoiche = prompt(`Scegli pari o dispari`);
 }
 console.log( `scelta utente: ` + userChoiche);
-//chiedere di scegliere un numero da uno a 5
+
+//chiedere di scegliere un numero da 1 a 5
 let userNumber = parseInt(prompt(`Scegli un numero da 1 a 5`));
 //valido i prompt
 while(userNumber < 1 || userNumber > 5){
@@ -32,6 +33,7 @@ console.log(`somma numeri: ` + sum);
 let isSumOddEven = isEvenOrOdd (sum);
 console.log(`la somma è: ` + isSumOddEven);
 
+//stabilisco il vincitore
 let gameResult 
 if(isSumOddEven === userChoiche){
     gameResult = `Congratulazioni hai vinto`
@@ -45,10 +47,12 @@ console.log(gameResult);
 //     FUNCTIONS
 // ----------------
 
+//Funzione che genera numero random in un intervallo, estremi compresi
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 
+//funzione che verifica se un numero è pari o dispari e ritorna il risultato come stringa
 function isEvenOrOdd (number){
     let oddEven 
     if(number % 2 === 0) {
