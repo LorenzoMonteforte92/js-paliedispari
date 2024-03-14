@@ -8,7 +8,7 @@ let userWord = prompt(`inserisci una parola`)
 //leggerla da destra verso sinistra
 // confronto se la parola scritta al contrario è uguale a quella inserita dall'utente
 
-let palidrome = isWordPalindrome (userWord);
+let palidrome = reverseWord (userWord);
 
 console.log(palidrome)
 
@@ -19,10 +19,10 @@ console.log(palidrome)
 //     FUNCTIONS
 // ----------------
 
-function isWordPalindrome (word){
+function reverseWord (word){
     
     let wordIndex = ``
-    for(let i = 0; i < word.length; i++) {
+    for(let i = word.length - 1; i >= 0; i--) {
         wordIndex += word[i]
     }
     return wordIndex
